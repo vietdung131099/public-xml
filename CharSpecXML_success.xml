@@ -1,0 +1,33 @@
+<soapenv:Envelope
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:cai3="http://schemas.ericsson.com/cai3g1.2/"
+	xmlns:sapc="http://schemas.ericsson.com/ma/SAPC/">
+	<soapenv:Header>
+		<cai3:SessionId>${epc1}</cai3:SessionId>
+		<cai3:TransactionId/>
+		<cai3:SequenceId/>
+		<cai3:Context/>
+	</soapenv:Header>
+	<soapenv:Body>
+		<cai3:Create>
+			<cai3:MOType>SAPCSubscription@http://schemas.ericsson.com/ma/SAPC/</cai3:MOType>
+			<cai3:MOId>
+				<sapc:pcSubscriberId>${epc2}</sapc:pcSubscriberId>
+			</cai3:MOId>
+			<cai3:MOAttributes>
+				<sapc:CreateSAPCSubscription pcSubscriberId="${msisdn}">
+					<sapc:pcSubscriberId>${epc3}</sapc:pcSubscriberId>               
+                    ${epc4}               
+					
+					<sapc:pcNotificationData>
+						<sapc:pcNotificationSMS pcNotificationSMS="${msisdn}">
+							<sapc:pcNotificationSMS>${epc3}</sapc:pcNotificationSMS>
+						</sapc:pcNotificationSMS>
+					</sapc:pcNotificationData>
+					${epc5}            
+				
+				</sapc:CreateSAPCSubscription>
+			</cai3:MOAttributes>
+		</cai3:Create>
+	</soapenv:Body>
+</soapenv:Envelope>
